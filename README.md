@@ -38,7 +38,7 @@ We’re proud of the insights and the interactive website we developed for **Sen
 
 - We learned how to combine **AI and NLP** to extract insights from large datasets and implemented an AI-powered chatbot to enhance user interaction with our findings.
   
-##👩‍💻 Team Members
+## 👩‍💻 Team Members
 - Sneha Joshi
 - Blen Begashaw
 - Lucy Wu
