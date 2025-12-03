@@ -1,77 +1,167 @@
+/* ================================
+   General Body & Fonts
+================================ */
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: #A3BBAD;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 5%;
+}
+
+/* ================================
+   Chat Widget
+================================ */
 .chat-widget-wrapper {
     position: fixed;
-    bottom: 0;
-    right: 0;
+    bottom: 20px;
+    right: 20px;
     z-index: 1000;
 }
 
-
+/* ================================
+   Headings & Paragraphs
+================================ */
 h1 {
-    text-align: left;
     font-size: 3em;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.3em;
+    text-align: left;
+    color: white; /* optional, depends on container */
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: white;
 }
 
 p {
-    font-size: 1.5em;
+    font-size: 1.2em;
+    line-height: 1.5em;
     text-align: left;
+    color: white;
 }
 
+/* ================================
+   Containers
+================================ */
 .container {
     width: 100%;
     display: flex;
-    justify-content: left;
-    align-items: left;
-    padding-left: 10%; /* Padding on the left side */
-    padding-right: 10%; /* Padding on the right side */
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 50px 10%;
+    box-sizing: border-box;
 }
 
-.img {
-    width: 300px;  /* Sets the width */
-    height: auto;  /* Maintains aspect ratio */
-}
-
-.image-container img {
-    width: 45%;  /* or whatever percentage you prefer */
-    height: auto; /* maintain aspect ratio */
-}
-
-.container0{
-    /* padding-top: 150px; */
-    height: 100vh;
-    /* margin-bottom: 150px; */
-    /* margin-top: 150px; */
-    padding-top: 200px;
-}
-.small-image {
-    width: 50%;  /* make the image 50% of its original width */
-    height: auto;  /* auto-adjust the height to maintain the aspect ratio */
+.container0 {
+    height: auto;
+    padding-top: 150px;
+    text-align: center;
 }
 
 .container1 {
-    padding-top: 75px;
-    padding-bottom: 100px;
-    height: flex;
     background-color: #357266;
+    padding: 50px 10%;
 }
 
 .container2 {
-    padding-top: 50px;
-    height: flex;
-    color: white;
     background-color: #0E3B43;
-    padding-bottom: 100px;
-
+    padding: 50px 10%;
+    color: white;
 }
 
+/* ================================
+   Images
+================================ */
+.small-image {
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.img {
+    width: 300px;
+    height: auto;
+}
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.image-container img {
+    width: 45%;
+    height: auto;
+}
+
+/* ================================
+   Lists
+================================ */
 ul {
-    list-style-type: disc;  /* Sets the bullet point style */
-    margin-left: 20px;  /* Adds some space to the left of the list */
-    padding-left: 0;  /* No padding on the left */
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
 }
 
 li {
-    font-size: 1.2em;  /* Makes the text a bit larger */
-    margin-bottom: 10px;  /* Adds some space between list items */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* ================================
+   Responsive Design
+================================ */
+@media screen and (max-width: 1024px) {
+    .image-container img {
+        width: 100%;
+    }
+
+    .small-image {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p, li {
+        font-size: 1em;
+    }
+
+    body {
+        padding: 0 3%;
+    }
+
+    .container {
+        padding: 30px 3%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p, li {
+        font-size: 0.95em;
+    }
+
+    .chat-widget-wrapper {
+        bottom: 10px;
+        right: 10px;
+    }
 }
