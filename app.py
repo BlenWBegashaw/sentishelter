@@ -1,17 +1,42 @@
 import gradio as gr
-import pandas as pd  # if your notebook uses it
+import pickle  # or whatever your notebook uses
+import pandas as pd
+import numpy as np
 
-# Example chatbot function
+# --- Step 1: Load your Kaggle model or resources ---
+# Example: if your notebook trained a model and saved it
+# Replace "chatbot_model.pkl" with your actual file
+try:
+    with open("chatbot_model.pkl", "rb") as f:
+        model = pickle.load(f)
+except FileNotFoundError:
+    model = None  # fallback if you don't have a model yet
+
+# --- Step 2: Define a function to generate responses ---
 def chatbot_response(message):
-    # TODO: Replace this with your Kaggle notebook logic
-    return f"You said: {message}"
+    """
+    This function takes the user's input and returns
+    a chatbot response using your Kaggle notebook logic.
+    """
 
-# Gradio UI
-chatbot = gr.Interface(
-    fn=chatbot_response,
-    inputs="text",
-    outputs="text",
-    title="SentiShelter Chatbot"
+    # --- Replace the following with your notebook logic ---
+    if model:
+        # Example: if your model has a predict() method
+        response = model.predict([message])[0]
+    else:
+        # Placeholder response if model is not loaded
+        response = f"You said: {message}"
+
+    return response
+
+# --- Step 3: Create Gradio interface ---
+chatbot_interface = gr.Interface(
+    fn=chatbot_response,      # function that handles user messages
+    inputs="text",            # text input from user
+    outputs="text",           # chatbot response
+    title="SentiShelter Chatbot",
+    description="Type a message and get a response from the chatbot."
 )
 
-chatbot.launch()
+# --- Step 4: Launch the app ---
+chatbot_interface.launch()
