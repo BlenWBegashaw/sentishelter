@@ -4,7 +4,7 @@ from nbconvert import PythonExporter
 import types
 
 # --- Step 1: Load the notebook ---
-with open("technica-2023.ipynb") as f:
+with open("kaggle.ipynb") as f:
     nb = nbformat.read(f, as_version=4)
 
 # Convert notebook to Python code
