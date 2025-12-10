@@ -7,47 +7,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <style>
-    body {
-        font-family: "Raleway", sans-serif;
-        background-color: #A3BBAD;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding-left: 7%;
-        padding-right: 35%;
-    }
-    .chat-widget-wrapper {
-        width: 100%;
-        height: 600px;
-        margin-bottom: 20px;
-    }
-    .container img {
-        max-width: 100%;
-        height: auto;
-    }
-    .image-container {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-    }
+      body {
+          font-family: "Raleway", sans-serif;
+          background-color: #A3BBAD;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding-left: 7%;
+          padding-right: 35%;
+      }
+      .chat-button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 24px;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          margin: 10px 0;
+      }
+      .chat-button:hover {
+          background-color: #45a049;
+      }
   </style>
 </head>
 <body>
 
-    <!-- Hugging Face Chatbot Embed -->
+    <!-- Chatbot Link -->
     <div class="chat-widget-wrapper">
-        <iframe 
-            src="https://huggingface.co/spaces/blenbegashaw/sentishelter-chatbots?iframe=true" 
-            width="100%" 
-            height="100%" 
-            style="border:1px solid #ccc; border-radius:8px;"
-            allow="fullscreen"
-        ></iframe>
+        <p>Talk to our climate change chatbot:</p>
+        <button class="chat-button" onclick="window.open('https://huggingface.co/spaces/blenbegashaw/sentishelter-chatbots', '_blank')">
+            Open Chatbot
+        </button>
     </div>
 
-    <!-- Intro Section -->
+    <!-- Introduction Section -->
     <div class="container container0">
         <img src="logo-removebg.png" class="small-image">
         <p>
