@@ -6,8 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-</head>
-<style>
+  <style>
     body {
         font-family: "Raleway", sans-serif;
         background-color: #A3BBAD;
@@ -19,20 +18,36 @@
         padding-left: 7%;
         padding-right: 35%;
     }
-</style>
+    .chat-widget-wrapper {
+        width: 100%;
+        height: 600px;
+        margin-bottom: 20px;
+    }
+    .container img {
+        max-width: 100%;
+        height: auto;
+    }
+    .image-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+  </style>
+</head>
 <body>
-  
-    <script async src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@main/dist/build/static/js/bundle.min.js"></script>
+
+    <!-- Hugging Face Chatbot Embed -->
     <div class="chat-widget-wrapper">
-        <langflow-chat
-          window_title="Technica 2023 Fannie Mae Chat"
-          flow_id="bf06af8e-e976-42d8-93fd-731d68fce267"
-          chat_inputs='{"text":""}'
-          chat_input_field="text"
-          host_url="https://blenwbegashaw.github.io/sentishelter/"
-        ></langflow-chat>
+        <iframe 
+            src="https://huggingface.co/spaces/blenbegashaw/sentishelter-chatbots?iframe=true" 
+            width="100%" 
+            height="100%" 
+            style="border:1px solid #ccc; border-radius:8px;"
+            allow="fullscreen"
+        ></iframe>
     </div>
 
+    <!-- Intro Section -->
     <div class="container container0">
         <img src="logo-removebg.png" class="small-image">
         <p>
@@ -42,6 +57,7 @@
         </p>
     </div>
 
+    <!-- Guiding Questions -->
     <div class="container container1">
         <h1>Guiding Questions for the Bot</h1>
         <p>Ask me anything! Let's talk about climate change and the Reddit Climate Change Dataset.</p>
@@ -65,6 +81,7 @@
         </ul>
     </div>
 
+    <!-- Charted Data -->
     <div class="container container2">
         <h1>Charted Data</h1>
         <h2>Monthly average sentiment</h2>
@@ -86,5 +103,6 @@
         <h2>Topic clusters data</h2>
         <img src="topic.png">
     </div>
+
 </body>
 </html>
