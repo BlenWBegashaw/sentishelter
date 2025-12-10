@@ -18,31 +18,34 @@
           padding-left: 7%;
           padding-right: 35%;
       }
-      .chat-button {
-          background-color: #4CAF50;
-          color: white;
-          padding: 12px 24px;
-          font-size: 16px;
-          border: none;
-          border-radius: 5px;
-          cursor: pointer;
-          margin: 10px 0;
+      #chat-container {
+          border: 2px solid #333;
+          padding: 10px;
+          width: 400px;
+          height: 400px;
+          overflow-y: auto;
+          background: #fff;
+          margin-bottom: 20px;
       }
-      .chat-button:hover {
-          background-color: #45a049;
+      #chat-input {
+          width: 300px;
+      }
+      #chat-send {
+          padding: 5px 10px;
+      }
+      #chat-output div {
+          margin-bottom: 10px;
       }
   </style>
 </head>
 <body>
 
-    <!-- Chatbot Link -->
-    <div class="chat-widget-wrapper">
-        <button class="chat-button" onclick="window.open('https://huggingface.co/spaces/blenbegashaw/sentishelter-chatbots', '_blank')">
-            Open Chatbot
-        </button>
+    <div id="chat-container">
+        <div id="chat-output"></div>
+        <input type="text" id="chat-input" placeholder="Ask a question...">
+        <button id="chat-send">Send</button>
     </div>
 
-    <!-- Introduction Section -->
     <div class="container container0">
         <img src="logo-removebg.png" class="small-image">
         <p>
@@ -52,7 +55,6 @@
         </p>
     </div>
 
-    <!-- Guiding Questions-->
     <div class="container container1">
         <h1>Guiding Questions for the Bot</h1>
         <p>Ask me anything! Let's talk about climate change and the Reddit Climate Change Dataset.</p>
@@ -76,15 +78,14 @@
         </ul>
     </div>
 
-    <!-- Charted Data 
     <div class="container container2">
         <h1>Charted Data</h1>
         <h2>Monthly average sentiment</h2>
         <img src="avgsentimentmonths.png">
         <p>Let's compare Jan 2010 and Jan 2020</p>
         <div class="image-container">
-            <img src="avgsentimentjav.png" >
-            <img src="avgsentimentjan2020.png" >
+            <img src="avgsentimentjav.png">
+            <img src="avgsentimentjan2020.png">
         </div>
         <hr>
         <h2>Top 50 most frequently mentioned persons</h2>
@@ -99,5 +100,50 @@
         <img src="topic.png">
     </div>
 
+<script>
+const apiToken = "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"; // replace with your token
+const modelEndpoint = "https://api-inference.huggingface.co/models/blenbegashaw/sentishelter-chatbots";
+
+async function queryHuggingFace(payload) {
+    const response = await fetch(modelEndpoint, {
+        method: "POST",
+        headers: {
+            "Authorization": `Bearer ${apiToken}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    });
+    return await response.json();
+}
+
+document.getElementById("chat-send").addEventListener("click", async () => {
+    const input = document.getElementById("chat-input").value;
+    const outputDiv = document.getElementById("chat-output");
+
+    // show user's question
+    const userMsg = document.createElement("div");
+    userMsg.innerHTML = `<b>You:</b> ${input}`;
+    outputDiv.appendChild(userMsg);
+
+    // send to Hugging Face
+    const result = await queryHuggingFace({ inputs: input });
+
+    // show bot's response
+    const botMsg = document.createElement("div");
+    if (result && result[0] && result[0].generated_text) {
+        botMsg.innerHTML = `<b>Bot:</b> ${result[0].generated_text}`;
+    } else if (result && result.image) {
+        botMsg.innerHTML = `<b>Bot:</b><br><img src="${result.image}" style="max-width:100%;">`;
+    } else {
+        botMsg.innerHTML = `<b>Bot:</b> Sorry, no response.`;
+    }
+    outputDiv.appendChild(botMsg);
+
+    outputDiv.scrollTop = outputDiv.scrollHeight;
+    document.getElementById("chat-input").value = "";
+});
+</script>
+
 </body>
 </html>
+
