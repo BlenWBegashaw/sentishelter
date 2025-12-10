@@ -1,6 +1,3 @@
-Perfect! I’ve updated your README with your links included for both the website and the Hugging Face chatbot. Here’s a polished version:
-
----
 
 # 🏡🌍 SentiShelter: Climate Change & Housing Sentiment Analysis
 
