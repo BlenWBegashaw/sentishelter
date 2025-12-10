@@ -12,20 +12,19 @@
         font-family: "Raleway", sans-serif;
         background-color: #A3BBAD;
         margin: 0;
-        display: flex; /* Enable flexbox */
-        justify-content: center; /* Center content horizontally */
-        align-items: center; /* Center content vertically */
-        flex-direction: column; /* Stack child elements vertically */
-        padding-left: 7%; /* Padding on the left side */
-        padding-right: 35%; /* Padding on the right side */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 7%;
+        padding-right: 35%;
     }
 </style>
 <body>
 
+    <!-- Chatbot is disabled for now because GitHub Pages cannot run localhost -->
+    <!--
     <script async src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@main/dist/build/static/js/bundle.min.js"></script>
-    <!-- chat_inputs: Stringified JSON with all the input keys and its values. The value of the key that is defined
-    as chat_input_field will be overwritten by the chat message.
-    chat_input_field: Input key that you want the chat to send the user message with. -->
     <div class="chat-widget-wrapper">
         <langflow-chat
           window_title="Technica 2023 Fannie Mae Chat"
@@ -35,8 +34,9 @@
           host_url="http://localhost:7860"
         ></langflow-chat>
     </div>
-    <div class=" container container0">
-        
+    -->
+
+    <div class="container container0">
         <img src="logo-removebg.png" class="small-image">
         <p>
             Climate change has a major impact on the housing market, such as increasing insurance rates, 
@@ -59,18 +59,15 @@
             <li>Which persons in the dataset are strongly associated with extreme sentiment? Who are they?</li>
             <li>What is the average sentiment for comments that include the top locations mentioned?</li>
             <li>Which locations in the dataset are strongly associated with extreme sentiment?</li>
-
         </ul>
         <p>Part 3</p>
         <ul>
             <li>What are the top topic clusters from the data and their averages?</li>
             <li>Do any of the keywords connect with housing market?</li>
             <li>What does this tell us about consumer confidence in housing sector?</li>
-
         </ul>
     </div>
 
-    <!-- Second Container -->
     <div class="container container2">
         <h1>Charted Data</h1>
         <h2>Monthly average sentiment</h2>
@@ -79,7 +76,7 @@
         <div class="image-container">
             <img src="avgsentimentjav.png" >
             <img src="avgsentimentjan2020.png" >
-          </div>
+        </div>
         <hr>
         <h2>Top 50 most frequently mentioned persons</h2>
         <img src="avgsentiment50.png">
@@ -91,8 +88,6 @@
         <hr>
         <h2>Topic clusters data</h2>
         <img src="topic.png">
-
-
     </div>
 </body>
 </html>
