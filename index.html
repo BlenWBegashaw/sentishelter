@@ -1,141 +1,155 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Technica 2023 - Climate Chatbot</title>
+  <title>Technica 2023</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <style>
-    body {
-      font-family: "Raleway", sans-serif;
-      background-color: #A3BBAD;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-    #chat-container {
-      border: 2px solid #333;
-      padding: 10px;
-      width: 400px;
-      max-width: 90%;
-      height: 500px;
-      overflow-y: auto;
-      background: #fff;
-      margin-bottom: 20px;
-    }
-    #chat-input {
-      width: 300px;
-      padding: 5px;
-    }
-    #chat-send {
-      padding: 5px 10px;
-    }
-    #chat-output div {
-      margin-bottom: 10px;
-    }
-    #chat-output img {
-      max-width: 100%;
-      margin-top: 5px;
-    }
+      body {
+          font-family: "Raleway", sans-serif;
+          background-color: #A3BBAD;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding-left: 7%;
+          padding-right: 35%;
+      }
+      #chat-container {
+          border: 2px solid #333;
+          padding: 10px;
+          width: 400px;
+          height: 400px;
+          overflow-y: auto;
+          background: #fff;
+          margin-bottom: 20px;
+      }
+      #chat-input {
+          width: 300px;
+      }
+      #chat-send {
+          padding: 5px 10px;
+      }
+      #chat-output div {
+          margin-bottom: 10px;
+      }
+      .image-container img {
+          max-width: 48%;
+          margin-right: 2%;
+      }
   </style>
 </head>
 <body>
 
-  <h1>Technica 2023 - Climate Chatbot</h1>
+    <!-- Chatbot -->
+    <div id="chat-container">
+        <div id="chat-output"></div>
+        <input type="text" id="chat-input" placeholder="Ask a question...">
+        <button id="chat-send">Send</button>
+    </div>
 
-  <div id="chat-container">
-    <div id="chat-output"></div>
-    <input type="text" id="chat-input" placeholder="Ask a question...">
-    <button id="chat-send">Send</button>
-  </div>
+    <!-- Content -->
+    <div class="container container0">
+        <img src="logo-removebg.png" class="small-image">
+        <p>
+            Climate change has a major impact on the housing market, such as increasing insurance rates, 
+            making some homes unsustainable due to natural disasters, and financial distress for borrowers.
+            Talk to our chatbot to learn more about Reddit's opinion on climate change during 2010-2022!
+        </p>
+    </div>
 
-  <div class="container container0">
-      <img src="logo-removebg.png" class="small-image">
-      <p>
-          Climate change has a major impact on the housing market, such as increasing insurance rates, 
-          making some homes unsustainable due to natural disasters, and financial distress for borrowers.
-          Talk to our chatbot to learn more about Reddit's opinion on climate change during 2010-2022!
-      </p>
-  </div>
+    <div class="container container1">
+        <h1>Guiding Questions for the Bot</h1>
+        <p>Ask me anything! Let's talk about climate change and the Reddit Climate Change Dataset.</p>
+        <p>Part 1</p>
+        <ul>
+            <li>What are the monthly average sentiments for the reddit comments in the dataset?</li>
+            <li>What does the dataset tell us about temporal trends?</li>
+        </ul>
+        <p>Part 2</p>
+        <ul>
+            <li>What is the average sentiment for comments that include the top persons mentioned?</li>
+            <li>Which persons in the dataset are strongly associated with extreme sentiment? Who are they?</li>
+            <li>What is the average sentiment for comments that include the top locations mentioned?</li>
+            <li>Which locations in the dataset are strongly associated with extreme sentiment?</li>
+        </ul>
+        <p>Part 3</p>
+        <ul>
+            <li>What are the top topic clusters from the data and their averages?</li>
+            <li>Do any of the keywords connect with housing market?</li>
+            <li>What does this tell us about consumer confidence in housing sector?</li>
+        </ul>
+    </div>
 
-  <div class="container container1">
-      <h1>Guiding Questions for the Bot</h1>
-      <p>Ask me anything! Let's talk about climate change and the Reddit Climate Change Dataset.</p>
-      <p>Part 1</p>
-      <ul>
-          <li>What are the monthly average sentiments for the reddit comments in the dataset?</li>
-          <li>What does the dataset tell us about temporal trends?</li>
-      </ul>
-      <p>Part 2</p>
-      <ul>
-          <li>What is the average sentiment for comments that include the top persons mentioned?</li>
-          <li>Which persons in the dataset are strongly associated with extreme sentiment? Who are they?</li>
-          <li>What is the average sentiment for comments that include the top locations mentioned?</li>
-          <li>Which locations in the dataset are strongly associated with extreme sentiment?</li>
-      </ul>
-      <p>Part 3</p>
-      <ul>
-          <li>What are the top topic clusters from the data and their averages?</li>
-          <li>Do any of the keywords connect with housing market?</li>
-          <li>What does this tell us about consumer confidence in housing sector?</li>
-      </ul>
-  </div>
+    <div class="container container2">
+        <h1>Charted Data</h1>
+        <h2>Monthly average sentiment</h2>
+        <img src="avgsentimentmonths.png">
+        <p>Let's compare Jan 2010 and Jan 2020</p>
+        <div class="image-container">
+            <img src="avgsentimentjav.png">
+            <img src="avgsentimentjan2020.png">
+        </div>
+        <hr>
+        <h2>Top 50 most frequently mentioned persons</h2>
+        <img src="avgsentiment50.png">
+        <img src="freq50names.png">
+        <hr>
+        <h2>Top 50 most frequently mentioned locations</h2>
+        <img src="avgsentimentloc.png">
+        <img src="freq50names2.png">
+        <hr>
+        <h2>Topic clusters data</h2>
+        <img src="topic.png">
+    </div>
 
-  <script>
-    async function askHF(question) {
-      const response = await fetch(
+<script>
+async function askHF(question) {
+    const response = await fetch(
         "https://hf.space/embed/blenbegashaw/sentishelter-chatbots/api/predict/",
         {
-          method: "POST",
-          body: JSON.stringify({ data: [question] }),
-          headers: { "Content-Type": "application/json" },
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ data: [question] })
         }
-      );
-      const result = await response.json();
-      return result.data; // usually [text, image]
+    );
+    const result = await response.json();
+    return result.data; // [text, image]
+}
+
+document.getElementById("chat-send").addEventListener("click", async () => {
+    const input = document.getElementById("chat-input").value;
+    const outputDiv = document.getElementById("chat-output");
+
+    // show user's question
+    const userMsg = document.createElement("div");
+    userMsg.innerHTML = `<b>You:</b> ${input}`;
+    outputDiv.appendChild(userMsg);
+
+    // get bot response
+    try {
+        const [text, image] = await askHF(input);
+
+        const botMsg = document.createElement("div");
+        botMsg.innerHTML = `<b>Bot:</b> ${text || ""}`;
+        if (image) {
+            botMsg.innerHTML += `<br><img src="${image}" style="max-width:100%;">`;
+        }
+        outputDiv.appendChild(botMsg);
+    } catch (err) {
+        const botMsg = document.createElement("div");
+        botMsg.innerHTML = `<b>Bot:</b> Sorry, something went wrong.`;
+        outputDiv.appendChild(botMsg);
+        console.error(err);
     }
 
-    document.getElementById("chat-send").addEventListener("click", async () => {
-      const input = document.getElementById("chat-input").value;
-      const outputDiv = document.getElementById("chat-output");
-
-      if (!input) return;
-
-      // Show user's question
-      const userMsg = document.createElement("div");
-      userMsg.innerHTML = `<b>You:</b> ${input}`;
-      outputDiv.appendChild(userMsg);
-
-      // Ask Hugging Face API
-      const result = await askHF(input);
-
-      // Show bot's response
-      const botMsg = document.createElement("div");
-      botMsg.innerHTML = `<b>Bot:</b> ${result[0] || "No response"}`;
-      
-      // If result has an image, append it
-      if (result[1]) {
-        const img = document.createElement("img");
-        img.src = result[1];
-        botMsg.appendChild(img);
-      }
-
-      outputDiv.appendChild(botMsg);
-
-      // Scroll to bottom
-      outputDiv.scrollTop = outputDiv.scrollHeight;
-
-      // Clear input
-      document.getElementById("chat-input").value = "";
-    });
-  </script>
-
+    // scroll to bottom
+    outputDiv.scrollTop = outputDiv.scrollHeight;
+    document.getElementById("chat-input").value = "";
+});
+</script>
 </body>
 </html>
-
-
-</body>
-</html>
-
