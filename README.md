@@ -24,7 +24,7 @@ SentiShelter aims to analyze and track how people feel when they discuss the rel
 
 ## 🔨 How We Built It
 
-* **Data Source**: We used the [Kaggle Reddit Climate Change dataset](https://www.kaggle.com/) containing comments discussing climate change.
+* **Data Source**: We used the [Kaggle Reddit Climate Change dataset](https://www.kaggle.com/datasets/blenbegashaw/the-reddit-climate-change-dataset) containing comments discussing climate change.
 * **Data Processing**: Using Python in a Kaggle notebook, we cleaned, reduced, and analyzed the dataset. SpaCy NLP tools were leveraged to extract meaningful insights from human language.
 * **Focus Areas**: We monitored key terms associated with climate and housing, including mentions of people, organizations, and locations.
 * **Visualization**: Seaborn and Matplotlib were used to create clear and visually appealing charts to show trends and sentiment over time.
