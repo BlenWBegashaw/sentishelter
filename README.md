@@ -74,6 +74,3 @@ SentiShelter aims to analyze and track how people feel when they discuss the rel
 
 ---
 
-If you want, I can also make a **version with GitHub-style emojis, table of contents, and badges** to make it look super professional and organized.
-
-Do you want me to do that next?
